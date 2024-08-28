@@ -22,8 +22,8 @@ addTaskBtn.addEventListener("click", showList);
 addTaskBtn.addEventListener("click", handleAddingNewTask);
 
 const handleToggleLineThrough = function (event) {
-  const selectedLi = event.currentTarget;
-  selectedLi.firstChild.classList.toggle("line-through"); // perfezionare perché prende anche il button a seconda del target
+  const selectedLi = event.target;
+  selectedLi.classList.toggle("line-through"); // perfezionare perché prende anche il button a seconda del target
 };
 
 const toDoList = document.getElementById("to-do-list");
