@@ -1,8 +1,16 @@
 const addTaskBtn = document.getElementById("add-task-btn");
+const newTaskToAdd = document.getElementById("new-task");
+
+const showList = (event) => {
+  event.preventDefault();
+  console.dir(newTaskToAdd);
+  if (newTaskToAdd.value !== "") {
+    document.getElementById("to-do-list-container").style.display = "block";
+  }
+};
 
 const handleAddingNewTask = (event) => {
   event.preventDefault();
-  const newTaskToAdd = document.getElementById("new-task");
   const toDoList = document.getElementById("to-do-list");
   console.dir(newTaskToAdd.value);
   const newLiElement = document.createElement("li");
@@ -10,6 +18,7 @@ const handleAddingNewTask = (event) => {
   toDoList.appendChild(newLiElement);
 };
 
+addTaskBtn.addEventListener("click", showList);
 addTaskBtn.addEventListener("click", handleAddingNewTask);
 
 const handleToggleLineThrough = function (event) {

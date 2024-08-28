@@ -57,7 +57,8 @@ main > *:not(:first-child) {
   margin-top: 2.5em;
 }
 
-.to-do-list-container {
+#to-do-list-container {
+  display: none;
   padding: 1.5rem;
   width: 400px;
   margin-inline: auto;
