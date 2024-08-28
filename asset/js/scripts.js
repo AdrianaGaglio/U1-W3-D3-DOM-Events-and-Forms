@@ -6,8 +6,6 @@ const showList = (event) => {
   if (newTaskToAdd.value !== "") {
     document.getElementById("to-do-list-container").style.display = "block";
     document.getElementById("completed-text").remove();
-  } else {
-    alert("Inserisci un nuovo task!");
   }
 };
 
@@ -17,7 +15,9 @@ const handleAddingNewTask = (event) => {
   const toDoList = document.getElementById("to-do-list");
   const newLiElement = document.createElement("li");
   newLiElement.innerHTML = `<span>${newTaskToAdd.value}</span>`;
-  toDoList.appendChild(newLiElement);
+  if (newTaskToAdd.value !== "") {
+    toDoList.appendChild(newLiElement);
+  }
 };
 
 addTaskBtn.addEventListener("click", showList);
@@ -66,6 +66,7 @@ toDoList.addEventListener("mouseover", handleToggleBtn); // aggiunge bottone al 
 deleteBtn.addEventListener("click", function (event) {
   document.getElementById("delete-btn").parentElement.remove();
   const list = document.querySelectorAll("li");
+  console.log(list);
   if (list.length === 0) {
     document.getElementById("to-do-list-container").style.display = "none";
     const newText = document.createElement("h3");
