@@ -69,7 +69,7 @@ main > *:not(:first-child) {
 
 #to-do-list li {
   margin-bottom: 0.5em;
-  line-height: 1.3em;
+  line-height: 1.5em;
 }
 
 .line-through {
@@ -78,7 +78,8 @@ main > *:not(:first-child) {
 
 #delete-btn {
   margin-left: 0.5em;
-  font-size: 0.7em;
+  font-size: 0.5em;
+  padding-block: 0.5em;
   display: inline;
 }
 

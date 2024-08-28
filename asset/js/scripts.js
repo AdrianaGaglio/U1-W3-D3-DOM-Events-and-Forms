@@ -25,7 +25,7 @@ toDoList.addEventListener("click", handleToggleLineThrough);
 const deleteBtn = document.createElement("button");
 deleteBtn.classList.add("btn");
 deleteBtn.id = "delete-btn";
-deleteBtn.innerText = "Delete";
+deleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i>`;
 
 const handleToggleBtn = function (event) {
   const tasks = document.querySelectorAll("#to-do-list li");
