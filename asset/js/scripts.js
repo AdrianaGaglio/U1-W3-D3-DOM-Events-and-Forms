@@ -22,8 +22,8 @@ addTaskBtn.addEventListener("click", showList);
 addTaskBtn.addEventListener("click", handleAddingNewTask);
 
 const handleToggleLineThrough = function (event) {
-  const selectedLi = event.target;
-  selectedLi.classList.toggle("line-through");
+  const selectedLi = event.currentTarget;
+  selectedLi.firstChild.classList.toggle("line-through"); // perfezionare perché prende anche il button a seconda del target
 };
 
 const toDoList = document.getElementById("to-do-list");
@@ -43,6 +43,7 @@ const handleToggleBtn = function (event) {
     selectedLi.addEventListener(
       "mouseover",
       function (event) {
+        selectedLi.style.backgroundColor = "rgb(0 0 0 / 5%)";
         selectedLi.appendChild(deleteBtn);
       },
       { once: true }
@@ -50,6 +51,7 @@ const handleToggleBtn = function (event) {
     selectedLi.addEventListener(
       "mouseleave",
       function (event) {
+        selectedLi.style.background = "none";
         deleteBtn.remove();
       },
       { once: true }
@@ -57,7 +59,7 @@ const handleToggleBtn = function (event) {
   });
 };
 
-toDoList.addEventListener("mouseover", handleToggleBtn);
+toDoList.addEventListener("mouseover", handleToggleBtn); // aggiunge bottone al passaggio del mouse
 
 deleteBtn.addEventListener("click", function (event) {
   document.getElementById("delete-btn").parentElement.remove();

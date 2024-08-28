@@ -89,10 +89,10 @@ main > *:not(:first-child) {
 }
 
 #delete-btn {
-  margin-left: 0.5em;
   font-size: 0.5em;
-  padding-block: 0.5em;
-  display: inline;
+  padding-block: 0.7em;
+  float: right;
+  vertical-align: middle;
 }
 
 .btn {
