@@ -6,6 +6,8 @@ const showList = (event) => {
   if (newTaskToAdd.value !== "") {
     document.getElementById("to-do-list-container").style.display = "block";
     document.getElementById("completed-text").remove();
+  } else {
+    alert("Inserisci un nuovo task!");
   }
 };
 
