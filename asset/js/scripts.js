@@ -6,7 +6,7 @@ const handleAddingNewTask = (event) => {
   const toDoList = document.getElementById("to-do-list");
   console.dir(newTaskToAdd.value);
   const newLiElement = document.createElement("li");
-  newLiElement.innerHTML = `<span>{newTaskToAdd.value}</span>`;
+  newLiElement.innerHTML = `<span>${newTaskToAdd.value}</span>`;
   toDoList.appendChild(newLiElement);
 };
 
@@ -22,9 +22,9 @@ const toDoList = document.getElementById("to-do-list");
 toDoList.addEventListener("click", handleToggleLineThrough);
 
 const deleteBtn = document.createElement("button");
-// deleteBtn.classList.add("delete-btn");
+deleteBtn.classList.add("btn");
 deleteBtn.id = "delete-btn";
-deleteBtn.innerText = "-";
+deleteBtn.innerText = "Delete";
 
 const handleToggleBtn = function (event) {
   const tasks = document.querySelectorAll("#to-do-list li");

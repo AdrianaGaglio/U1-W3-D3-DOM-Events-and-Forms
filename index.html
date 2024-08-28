@@ -27,6 +27,29 @@
       h1 {
         font-size: 2.5rem;
         font-weight: 600;
+        text-align: center;
+      }
+
+      form {
+        width: 400px;
+        margin-inline: auto;
+      }
+
+      form input,
+      form button {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -1px;
+        height: 30px;
+        padding-block: 0.5em;
+      }
+
+      form input {
+        width: 74%;
+      }
+
+      form button {
+        width: 25%;
       }
 
       form label {
@@ -42,19 +65,19 @@
         margin-top: 2.5em;
       }
 
-      .form-container {
-      }
-
       .to-do-list-container {
         padding: 1.5rem;
-      }
-
-      .to-do-list-container {
         width: 400px;
+        margin-inline: auto;
         background-color: lightgoldenrodyellow;
         border-top-right-radius: 15px;
         border-bottom-left-radius: 15px;
         box-shadow: 2px 2px 5px rgb(0 0 0 / 10%);
+      }
+
+      #to-do-list li {
+        margin-bottom: 0.5em;
+        line-height: 1.3em;
       }
 
       .line-through {
@@ -62,7 +85,16 @@
       }
 
       #delete-btn {
-        margin-left: 1em;
+        margin-left: 0.5em;
+        font-size: 0.7em;
+        display: inline;
+      }
+
+      .btn {
+        background-color: lightblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
       }
     </style>
   </head>
@@ -71,9 +103,8 @@
       <h1>TO-DO LIST</h1>
       <div class="form-container">
         <form>
-          <label for="new-task">Inserisci un nuovo task alla lista</label>
-          <input id="new-task" type="text" />
-          <button id="add-task-btn" type="submit">Aggiungi task</button>
+          <input id="new-task" type="text" required placeholder="Inserisci un nuovo task" />
+          <button class="btn" id="add-task-btn" type="submit">Aggiungi task</button>
         </form>
       </div>
       <div class="to-do-list-container">
