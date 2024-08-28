@@ -72,6 +72,11 @@ main > *:not(:first-child) {
   line-height: 1.5em;
 }
 
+#to-do-list li:hover,
+#delete-btn {
+  cursor: pointer;
+}
+
 .line-through {
   text-decoration: line-through;
 }
