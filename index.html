@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation & Events</title>
+    <link rel="stylesheet" href="./asset/css/reset.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      input,
+      button {
+        font-family: inherit;
+      }
+
+      main {
+        width: 80%;
+        margin-inline: auto;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+      }
+
+      form label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      main {
+        padding-block: 3em;
+      }
+
+      main > *:not(:first-child) {
+        margin-top: 2.5em;
+      }
+
+      .form-container {
+      }
+
+      .to-do-list-container {
+        padding: 1.5rem;
+      }
+
+      .to-do-list-container {
+        width: 400px;
+        background-color: lightgoldenrodyellow;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 2px 2px 5px rgb(0 0 0 / 10%);
+      }
+
+      .line-through {
+        text-decoration: line-through;
+      }
+
+      #delete-btn {
+        margin-left: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>TO-DO LIST</h1>
+      <div class="form-container">
+        <form>
+          <label for="new-task">Inserisci un nuovo task alla lista</label>
+          <input id="new-task" type="text" />
+          <button id="add-task-btn" type="submit">Aggiungi task</button>
+        </form>
+      </div>
+      <div class="to-do-list-container">
+        <ul id="to-do-list">
+          <li><span>Fare la spesa</span></li>
+          <li><span>Pagare bollette</span></li>
+        </ul>
+      </div>
+    </main>
+    <script src="./asset/js/scripts.js"></script>
+  </body>
+</html>
