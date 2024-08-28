@@ -14,6 +14,7 @@ addTaskBtn.addEventListener("click", handleAddingNewTask);
 
 const handleToggleLineThrough = function (event) {
   const selectedLi = event.target;
+  console.dir(selectedLi);
   selectedLi.classList.toggle("line-through");
 };
 
