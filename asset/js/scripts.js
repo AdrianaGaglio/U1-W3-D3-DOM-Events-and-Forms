@@ -1,18 +1,18 @@
 const addTaskBtn = document.getElementById("add-task-btn");
-const newTaskToAdd = document.getElementById("new-task");
 
 const showList = (event) => {
   event.preventDefault();
-  console.dir(newTaskToAdd);
+  const newTaskToAdd = document.getElementById("new-task");
   if (newTaskToAdd.value !== "") {
     document.getElementById("to-do-list-container").style.display = "block";
+    document.getElementById("completed-text").remove();
   }
 };
 
 const handleAddingNewTask = (event) => {
   event.preventDefault();
+  const newTaskToAdd = document.getElementById("new-task");
   const toDoList = document.getElementById("to-do-list");
-  console.dir(newTaskToAdd.value);
   const newLiElement = document.createElement("li");
   newLiElement.innerHTML = `<span>${newTaskToAdd.value}</span>`;
   toDoList.appendChild(newLiElement);
@@ -23,7 +23,6 @@ addTaskBtn.addEventListener("click", handleAddingNewTask);
 
 const handleToggleLineThrough = function (event) {
   const selectedLi = event.target;
-  console.dir(selectedLi);
   selectedLi.classList.toggle("line-through");
 };
 
@@ -62,4 +61,12 @@ toDoList.addEventListener("mouseover", handleToggleBtn);
 
 deleteBtn.addEventListener("click", function (event) {
   document.getElementById("delete-btn").parentElement.remove();
+  const list = document.querySelectorAll("li");
+  if (list.length === 0) {
+    document.getElementById("to-do-list-container").style.display = "none";
+    const newText = document.createElement("h3");
+    newText.id = "completed-text";
+    newText.innerText = "Hai fatto tutto!!!";
+    document.querySelector("div").after(newText);
+  }
 });
